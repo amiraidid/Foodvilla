@@ -35,4 +35,3 @@ function MenuCard({value}) {
 }
 
 export default MenuCard
-{/* <button onClick={() => removeFromCart(recipe.id)}><i className="bi bi-check2-circle text-red-700 text-2xl cursor-pointer"></i></button> */}
