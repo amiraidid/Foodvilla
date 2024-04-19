@@ -2,10 +2,12 @@ import { useContext  } from 'react';
 import useFetch from '../hooks/useFetch'
 import { MyContext } from '../context/MyContext';
 
+
 function MenuCard({value}) {
 
     const {recipes} = useFetch(value);
     const { addToCart } = useContext(MyContext);
+    
 
     function handleAdd(recipe) {
         addToCart(recipe)
@@ -16,7 +18,7 @@ function MenuCard({value}) {
     return (
         <section className='body my-10'>
             <div className='grid grid-cols-4 max-sm:grid-cols-2 gap-4 '>
-                {recipes.length === 0 ? "There is no data" :(
+                {recipes.length === 0 ? (<h1 className='text-3xl text-center font-bold'>There is no data</h1>) :(
                     recipes.map((recipe) => (
                         <div key={recipe.id} className='menu-card rounded-lg'>
                             <img src={recipe.image} alt={recipe.name} className=''/>
@@ -33,5 +35,6 @@ function MenuCard({value}) {
         </section>
     )
 }
+
 
 export default MenuCard
