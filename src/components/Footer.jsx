@@ -16,9 +16,6 @@ function Footer() {
                 <li>
                     <Link to="#" className="hover:underline me-4 md:me-6">Licensing</Link>
                 </li>
-                <li>
-                    <Link to="#" className="hover:underline">Contact</Link>
-                </li>
             </ul>
             </div>
         </footer>
