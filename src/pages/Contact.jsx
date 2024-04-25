@@ -23,7 +23,7 @@ function Contact() {
                     <input className='outline-none' type="email" placeholder='Your Email...' autoComplete='off' name='email'  /><br />
                     <input className='outline-none' type="text" placeholder='Your Subject..' autoComplete='off' name='subject'  /><br />
                     <textarea  className='outline-none' name="" id="" cols="30" rows="10"></textarea><br />
-                    <input type="submit" value="SUBMIT" className='bg-blue-500 text-white cursor-pointe'/>
+                    <input type="submit" value="SUBMIT" className='bg-blue-500 text-white cursor-pointer shadow-slate-400'/>
                 </form>
 
             </div>
