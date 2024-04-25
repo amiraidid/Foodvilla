@@ -12,7 +12,7 @@ function ProductDetail() {
     
     useEffect(() => {
         const fetchProduct = async () => {
-            const recipes = `${process.env.REACT_APP_HOST_KEY}recipes/${params.id}`
+            const recipes = `${process.env.REACT_APP_HOST_KEY}${params.id}`
             const response = await fetch(recipes)
             const data = await response.json()
             setProduct(data)
