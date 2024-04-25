@@ -6,12 +6,12 @@ function Header() {
 
 
     return (
-        <header className='body flex justify-between items-center my-5 border-b-2 '>
+        <header className='body bg-white flex justify-between items-center mb-5 pt-4 border-b-2 fixed top-0 right-0 left-0'>
             
             <Link to="/"className='title'>Food Villa</Link>
 
             <nav className={``}>
-                <ul className={`lg:flex md:flex xl:flex justify-between items-center nav-mobile ${displayMenu ? 'hidden' : 'flex'}`}>
+                <ul className={`lg:flex md:flex xl:flex justify-center items-center nav-mobile ${displayMenu ? 'hidden' : 'flex'}`}>
                     <li><NavLink className='nav-link' to="/">Home</NavLink></li>
                     <li><NavLink className='nav-link' to="cart">Cart</NavLink></li>
                     {/* <li><NavLink className='nav-link'  to="about">About</NavLink></li>

@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function AboutUs() {
     return (
         <section className='body my-10'>
@@ -17,7 +18,7 @@ function AboutUs() {
                     <p className='py-4'>
                     each dish is crafted using the finest ingredients ana cooked to, perfection by Our skilled chefs.
                     </p>
-                    <button className='btn'>Order Now</button>
+                    <a href="#categories"><button className='btn'>Order Now</button></a>
                 </span>
                 
             </div>

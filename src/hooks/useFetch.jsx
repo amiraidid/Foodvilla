@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 function useFetch(value) {
 
     const [recipes, setRecipes] = useState([])
-    const url = `${process.env.REACT_APP_HOST_KEY}?category=${value}`
+    const url = `${process.env.REACT_APP_HOST_KEY}recipes?category=${value}`
     
 
     useEffect(() => {

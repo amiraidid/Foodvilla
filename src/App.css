@@ -64,13 +64,45 @@
     grid-template-columns: auto, auto, auto;
 }
 
+
+.pop-up-modal {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: all 5s ease-in;
+}
+
+.pop-up-modal video {
+    width: 650px;
+    padding-top: 10px;
+}
+
+form input, textarea {
+    padding: 10px;
+    width: 550px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.card-shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 @media not all and (min-width: 640px) {
     body {
         margin-inline: 20px;
     }
     .nav-mobile {
         position: absolute;
-        top: 12%;
+        top: 100%;
         right: 0;
         left: 0;
         background-color: burlywood;
@@ -78,6 +110,15 @@
     }
     .hero-card > div:nth-child(n+3) {
         display: none;
+    }
+
+    .pop-up-modal video {
+        width: 420px;
+        padding-top: 10px;
+    }
+
+    form input, textarea {
+        width: 420px;
     }
 }
 

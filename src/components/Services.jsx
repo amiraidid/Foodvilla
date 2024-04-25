@@ -4,24 +4,14 @@ function Services() {
 
     const services =  [
         {name: 'Healthy Food', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.', image: './assets/others/menu_8.png',},
-        {
-            name : "Fast Delivery",text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.',image: "./assets/others/delivery-bike.png"
-        },
-        {
-            name: "Easy Order",
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.',
-            image: "./assets/others/order.jpg"
-        },
-        {
-            name: "Buffet Service",
-            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.',
-            image: "./assets/others/buffet.jpg"
-        }
+        {name : "Fast Delivery",text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.',image: "./assets/others/delivery-bike.png"},
+        {name: "Easy Order", text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.', image: "./assets/others/order.jpg"},
+        {name: "Buffet Service", text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, exercitationem.', image: "./assets/others/buffet.jpg"}
     ]
 
     return (
-        <section className='body'>
-            <h1 className='text-4xl font-bold text-center my-4'>Our Services</h1>
+        <section className='body mt-[5rem]'>
+            <h1 className='text-4xl font-bold text-center mb-10'>Our Services</h1>
             <div className='flex flex-wrap justify-between items-center max-sm:justify-center '>
                 {
                     services.map((service, index) => (

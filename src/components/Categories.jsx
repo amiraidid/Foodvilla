@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 
 function Categories() {
-    const [type, setType] = useState('')
+    const [type, setType] = useState('salad')
     const categories = ['pasta', 'desert', 'salad', 'cake', 'Rolls','sandwich'];
 
     function handleCategory (category) {
@@ -12,7 +12,7 @@ function Categories() {
 
 
     return (
-        <section className='body '>
+        <section className='body' id='categories'>
             <h1 className='text-2xl font-bold text-center pt-5 pb-10'>Categories</h1>
             <div className=''>
                 <ul className='flex flex-wrap justify-between items-center max-sm:justify-center max-sm:gap-4'>
