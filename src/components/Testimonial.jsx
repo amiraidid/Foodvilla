@@ -5,7 +5,7 @@ function Testimonial() {
     const testimonials = [
         {id:1, name: "Maria John", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, perferendis?", profile: "./assets/pexels-bankole-adeoni-4401280.jpg", image: "./assets/cake/food_18.png"},
         {id:2, name: "Ashly David", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, perferendis?", profile: "./assets/pexels-mari-korz-10112345.jpg", image: "./assets/pasta/food_29.png"},
-        {id:3, name: "Balle Akter", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, perferendis?", profile: "./assets/pexels-mari-korz-10112345.jpg", image: "./assets/sandwich/food_15.png"}
+        {id:3, name: "Balle Akter", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, perferendis?", profile: "./assets/pexels-mihman-duğanlı-20532916.jpg", image: "./assets/sandwich/food_15.png"}
     ]
 
     const [currentIndex, setCurrentIndex] = useState(1);

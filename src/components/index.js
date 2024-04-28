@@ -7,3 +7,4 @@ export { default as Categories } from './Categories';
 export { default as MenuCard} from './MenuCard';
 export { default as Services } from './Services';
 export { default as Testimonial } from './Testimonial' 
+export { default as ProductCard } from './ProductCard'
