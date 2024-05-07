@@ -18,7 +18,7 @@ function AboutUs() {
                     <p className='py-4'>
                     each dish is crafted using the finest ingredients ana cooked to, perfection by Our skilled chefs.
                     </p>
-                    <a href="#categories"><button className='btn'>Order Now</button></a>
+                    <a href="#categories"><button className='btn hover:transition-all duration-75 ease-in-out'>Order Now</button></a>
                 </span>
                 
             </div>

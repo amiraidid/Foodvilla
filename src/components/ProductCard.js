@@ -4,13 +4,12 @@ import { MyContext } from '../context/MyContext'
 function ProductCard({product}) {
 
     const {image, name, price, description} = product;
-    console.log(image)
     const { addToCart } = useContext(MyContext)
 
     return (
-        <div className="flex max-sm:block justify-around items-center mt-20">
+        <section className="flex max-sm:block max-sm:justify-center justify-around mx-auto items-center mt-20 pb-10 mb-5 ">
             
-                <img src={image} alt={name} className="flex-1" />
+                <img src={image} alt={name} className="flex-1 rounded-md mr-4  mt-10 w-44 max-sm:w-full max-sm:mt-28" />
                 <div className="flex-1">
                     <h1 className="text-2xl font-semibold py-4">{name}</h1>
                     <span>
@@ -22,7 +21,7 @@ function ProductCard({product}) {
                         <button  className='mt-6 bg-[#83b6fa] py-2 px-4 rounded-lg text-white'>Checkout</button>
                     </span>
                 </div>
-            </div>
+        </section>
     )
 }
 

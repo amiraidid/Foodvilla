@@ -23,8 +23,8 @@ function MenuCard({value}) {
                         recipes.map((recipe) => (
                             <div key={recipe.id} className='menu-card rounded-lg'>
                             <Link to={`product/${recipe.id}`}>
-                                    <img src={recipe.image} alt={recipe.name}/>
-                                    <h1 className='font-semibold py-1 text-gray-600'>{recipe.name}</h1>
+                                <img src={recipe.image} alt={recipe.name}/>
+                                <h1 className='font-semibold py-1 text-gray-600'>{recipe.name}</h1>
                             </Link>
                             <span className='flex justify-between items-center'>
                                 <h1>${recipe.price}</h1> 

@@ -25,7 +25,7 @@ function ProductDetail() {
     
 
     return (
-        <section className='body h-[80vh] flex justify-center items-center'>
+        <section className='body h-screen flex justify-center items-center'>
             <ProductCard product={product}/>
         </section>
     )

@@ -16,7 +16,7 @@ function Hero() {
                     <p className='py-2'>
                     we believe that dining is not just about food, it's about creating amemorable experience, Our team of passionate chefs and hospitalityprofessionals strive to provide you with the best possible dining experience every time you visit us.
                     </p>
-                    <a href="#categories"><button className='btn' onClick={() => setShowCard(!cardShow)}>Order Now</button></a>
+                    <a href="#categories"><button className='btn hover:transition-all duration-75 ease-in-out' onClick={() => setShowCard(!cardShow)}>Order Now</button></a>
                     <span className='icon'><i className="bi bi-play-circle" onClick={() => setShow(!show)}></i></span>
                     { show && <Modal setshow={setShow}/> }
                 </div>

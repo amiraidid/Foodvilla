@@ -40,9 +40,9 @@ function Header() {
             <div className='flex justify-center items-center gap-2'>
                 {
                     isAuth ? 
-                    (<button onClick={handleSignOut} className='flex item-center gap-2 bg-red-400 px-4 py-2 text-white font-bold rounded-md'><i className="bi bi-box-arrow-left"></i> SignOut</button>)
+                    (<button onClick={handleSignOut} className='transition ease-in-out delay-150 flex item-center gap-2 bg-red-400 px-4 py-2 text-white font-bold rounded-md'><i className="bi bi-box-arrow-left"></i> SignOut</button>)
                     : 
-                    (<button onClick={handleLogin} className='flex item-center gap-2 bg-blue-400 px-4 py-2 text-white font-bold rounded-md'><i className="bi bi-google"></i>Login</button>)
+                    (<button onClick={handleLogin} className='transition ease-in-out delay-150 flex item-center gap-2 bg-blue-400 px-4 py-2 text-white font-bold rounded-md'><i className="bi bi-google"></i>Login</button>)
                 }
                 
                 <Link to='cart'><button className='p-2 rounded text-xl'><i className="bi bi-basket"></i></button></Link>
