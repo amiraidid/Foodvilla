@@ -3,7 +3,7 @@ import React from 'react'
 
 function AboutUs() {
     return (
-        <section className='body my-10'>
+        <section className='body my-10' id='about'>
             
             <div className='flex flex-wrap-reverse max-sm:justify-center justify-between items-center max-sm:text-center'>
                 <div>

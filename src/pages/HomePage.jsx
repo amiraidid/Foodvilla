@@ -1,4 +1,5 @@
-import { AboutUs, Hero, Categories, Services, Testimonial } from '../components'
+import { Categories, Testimonial } from '../components'
+import { AboutUs, Hero, Services } from '../pages'
 import useTitle from '../hooks/useTitle'
 import Contact from './Contact'
 

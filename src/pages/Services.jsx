@@ -10,7 +10,7 @@ function Services() {
     ]
 
     return (
-        <section className='body mt-[5rem]'>
+        <section className='body mt-[5rem]' id='service'>
             <h1 className='text-4xl font-bold text-center mb-10'>Our Services</h1>
             <div className='flex flex-wrap justify-between items-center max-sm:justify-center '>
                 {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import HeroCard from './HeroCard'
-import Modal from './Modal'
+import HeroCard from '../components/HeroCard'
+import Modal from '../components/Modal'
 
 
 function Hero() {
@@ -9,7 +9,7 @@ function Hero() {
 
     return (
         <>
-            <section className='body flex flex-wrap-reverse justify-between items-center  max-sm:block mt-20'>
+            <section className='body flex flex-wrap-reverse justify-between items-center  max-sm:block mt-20' id='home'>
                 
                 <div className='flex-1 h-fit mr-4'>
                     <h1 className='text-[#ff905d] text-2xl py-4'>Best Food in your town!</h1>

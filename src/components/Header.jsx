@@ -3,9 +3,18 @@ import {Link, NavLink} from 'react-router-dom';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { auth, provider } from '../firebase/config';
 
+
+const NavBar = ({ displayMenu }) => {
+}
 function Header() {
     const [displayMenu, setDisplayMenu] = useState(true)
-
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem('isAuthed')) || false)
 
 
@@ -29,11 +38,11 @@ function Header() {
 
             <nav className={``}>
                 <ul className={`lg:flex md:flex xl:flex justify-center items-center nav-mobile ${displayMenu ? 'hidden' : 'flex'}`}>
-                    <li><NavLink className='nav-link' to="/">Home</NavLink></li>
-                    <li><NavLink className='nav-link' to="cart">Cart</NavLink></li>
-                    {/* <li><NavLink className='nav-link'  to="about">About</NavLink></li>
-                    <li><NavLink className='nav-link' to="service">Service</NavLink></li>
-                    <li><NavLink className='nav-link' to="contact">Contacts</NavLink></li> */}
+                    <li><Link className='nav-link' to="/" onClick={(e) => handleScroll(e, 'home')}>Home</Link></li>
+                    <li><Link className='nav-link' to="/service" onClick={(e) => handleScroll(e, 'service')}>Services</Link></li>
+                    <li><Link className='nav-link' to="/about" onClick={(e) => handleScroll(e, 'about')}>About</Link></li>
+                    <li><Link className='nav-link' to="/contacts" onClick={(e) => handleScroll(e, 'contact')}>Contacts</Link></li>
+                    {/* <li><NavLink className='nav-link' to="cart">Cart</NavLink></li> */}
                 </ul>
             </nav>
 
