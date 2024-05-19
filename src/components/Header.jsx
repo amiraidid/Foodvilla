@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { auth, provider } from '../firebase/config';
 
 
-const NavBar = ({ displayMenu }) => {
-}
 function Header() {
     const [displayMenu, setDisplayMenu] = useState(true)
     const handleScroll = (e, id) => {
