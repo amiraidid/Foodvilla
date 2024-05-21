@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {Link} from 'react-router-dom';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { auth, provider } from '../firebase/config';
+import { UserContext } from '../context/UserContext';
 
 
 function Header() {
@@ -13,20 +14,13 @@ function Header() {
             section.scrollIntoView({ behavior: 'smooth' });
         }
     }
-    const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem('isAuthed')) || false)
-
-
-    function handleLogin () {
-        signInWithPopup(auth, provider);
-        setIsAuth(true)
-        localStorage.setItem("isAuthed", true)
-    }
+    
+    const { currentUser, setCurrentUser } = useContext(UserContext)
 
     function handleSignOut () {
         signOut(auth)
-        setIsAuth(false)
-        localStorage.setItem("isAuthed", false)
-        window.location.reload()
+        localStorage.removeItem("token")
+        setCurrentUser(false)
     }
 
     return (
@@ -40,19 +34,22 @@ function Header() {
                     <li><Link className='nav-link' to="/service" onClick={(e) => handleScroll(e, 'service')}>Services</Link></li>
                     <li><Link className='nav-link' to="/about" onClick={(e) => handleScroll(e, 'about')}>About</Link></li>
                     <li><Link className='nav-link' to="/contacts" onClick={(e) => handleScroll(e, 'contact')}>Contacts</Link></li>
-                    {/* <li><NavLink className='nav-link' to="cart">Cart</NavLink></li> */}
                 </ul>
             </nav>
 
             <div className='flex justify-center items-center gap-2'>
+                <Link to='cart'><button className='px-2 py-1 rounded text-xl bg-red-400 text-white'><i className="bi bi-cart4"></i></button></Link>
                 {
-                    isAuth ? 
-                    (<button onClick={handleSignOut} className='transition ease-in-out delay-150 flex item-center gap-2 bg-red-400 px-4 py-2 text-white font-bold rounded-md'><i className="bi bi-box-arrow-left"></i> SignOut</button>)
-                    : 
-                    (<button onClick={handleLogin} className='transition ease-in-out delay-150 flex item-center gap-2 bg-blue-400 px-4 py-2 text-white font-bold rounded-md'><i className="bi bi-google"></i>Login</button>)
+                    currentUser ? (
+                        <button onClick={handleSignOut} className='flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>SignOut</button>
+                    ) : (
+                        <>
+                            <Link to='Register'><button className='flex item-center gap-2 bg-blue-400 px-4 py-2 text-white font-bold rounded-md'>Register</button></Link>
+                            <Link to='login'><button className='flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>Login</button></Link>
+                        </>
+
+                    )
                 }
-                
-                <Link to='cart'><button className='p-2 rounded text-xl'><i className="bi bi-basket"></i></button></Link>
                 <button onClick={() => setDisplayMenu(!displayMenu)} className={`p-2 rounded text-3xl max-sm:block hidden`}><i className="bi bi-list"></i></button>
             </div>
             

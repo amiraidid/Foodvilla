@@ -32,6 +32,7 @@ export const CartContext = ({children}) => {
         cartItems.forEach(recipe => total = total + recipe.price)
         return total;
     }
+    
 
     return (
         <MyContext.Provider value={{cartItems, addToCart, removeFromCart, updateTotal}}>

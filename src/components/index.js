@@ -5,3 +5,5 @@ export { default as Categories } from './Categories';
 export { default as MenuCard} from './MenuCard';
 export { default as Testimonial } from './Testimonial' 
 export { default as ProductCard } from './ProductCard'
+export { default as Checkout } from './Checkout'
+export { default as SkeletonCard } from './SkeletonCard'

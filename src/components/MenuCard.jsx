@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import useFetch from '../hooks/useFetch'
 import { MyContext } from '../context/MyContext';
 import { Link } from 'react-router-dom';
+import SkeletonCard from './SkeletonCard';
+import { toast } from 'react-toastify';
 
 function MenuCard({value}) {
 
@@ -10,16 +12,16 @@ function MenuCard({value}) {
 
     function handleAdd(recipe) {
         addToCart(recipe);
-        alert(`Added to the Cart ${recipe.name}`)
+        toast.success(`Added to the Cart ${recipe.name}`)
     }
 
 
     return (
-        <section className='body my-10 ' id='menu-card'>
-            <div className='grid grid-cols-4 max-sm:grid-cols-2 gap-4 '>
+        <section className='body my-10' id='menu-card'>
+            <div className='grid grid-cols-4 max-sm:grid-cols-2 gap-4'>
                     
                 {
-                    recipes.length === 0 ? (<h1 className='text-3xl text-center font-bold'>There is no data</h1>) :(
+                    recipes.length === 0 ? <SkeletonCard /> :(
                         recipes.map((recipe) => (
                             <div key={recipe.id} className='menu-card rounded-lg'>
                             <Link to={`product/${recipe.id}`}>

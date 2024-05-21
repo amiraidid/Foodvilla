@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import { CartContext } from './context/MyContext';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

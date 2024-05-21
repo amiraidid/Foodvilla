@@ -2,8 +2,8 @@ import { Navigate } from 'react-router-dom';
 
 
 function ProctectedRoutes({children}) {
-    const isAuth = JSON.parse(localStorage.getItem("isAuthed") || false);
-    return isAuth ? children : <Navigate to="/" />
+    const isAuth = localStorage.getItem("token") || false;
+    return isAuth ? children : <Navigate to='/login' />
 }
 
 export default ProctectedRoutes
