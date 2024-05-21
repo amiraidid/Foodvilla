@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import {Link} from 'react-router-dom';
-import { signInWithPopup, signOut } from 'firebase/auth';
-import { auth, provider } from '../firebase/config';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase/config';
 import { UserContext } from '../context/UserContext';
 
 

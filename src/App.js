@@ -17,7 +17,7 @@ function App() {
       setCurrentUser(true)
     }
     setIsLoading(false)
-  },[])
+  },[currentUser])
 
   if (isLoading) return 
 
