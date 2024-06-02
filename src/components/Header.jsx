@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { UserContext } from '../context/UserContext';
+import { provider } from '../firebase/config';
+import { signInWithPopup } from 'firebase/auth';
 
 
 function Header() {
@@ -21,8 +23,16 @@ function Header() {
     function handleSignOut () {
         signOut(auth)
         localStorage.removeItem("token")
+        localStorage.removeItem("isAuth")
         setCurrentUser(false)
         window.location.reload()
+    }
+
+    const [isAuth, setIsAuth ]= useState(JSON.parse(localStorage.getItem("isAuth")) || false);
+    const handleGoogle = () => {
+        signInWithPopup(auth, provider)
+        setIsAuth(true)
+        localStorage.setItem("isAuth", true)
     }
 
     return (
@@ -40,6 +50,7 @@ function Header() {
             </nav>
 
             <div className='flex justify-center items-center gap-2'>
+                {isAuth && <button onClick={handleGoogle} className='max-sm:hidden flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>Google</button>}
                 <Link to='cart'><button className='px-2 py-1 rounded text-xl bg-red-400 text-white'><i className="bi bi-cart4"></i></button></Link>
                 {
                     currentUser ? (
