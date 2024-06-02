@@ -3,7 +3,7 @@ import useFetch from '../hooks/useFetch'
 import { MyContext } from '../context/MyContext';
 import { Link } from 'react-router-dom';
 import SkeletonCard from './SkeletonCard';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast'
 
 function MenuCard({value}) {
 

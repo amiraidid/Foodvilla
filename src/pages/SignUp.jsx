@@ -1,7 +1,7 @@
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../firebase/config'
 import { useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom';
 
 function SignUp() {

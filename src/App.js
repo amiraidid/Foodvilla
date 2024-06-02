@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 import {Footer, Header} from './components';
 import AllRoutes from './routes/AllRoutes'
 import { UserContext } from './context/UserContext';
+import './App.css';
 
 
 function App() {
@@ -28,19 +27,7 @@ function App() {
           <AllRoutes />
           <Footer />
       </UserContext.Provider>
-      <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          />
-      <ToastContainer />
+      <Toaster position='top-right' />
     </div>
   );
 }

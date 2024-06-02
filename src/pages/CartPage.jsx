@@ -11,7 +11,7 @@ function CartPage() {
     
     
     return (
-        <section className='body h-screen mt-20'>
+        <section className='body  min-h-screen mt-20'>
             <h1 className='text-4xl font-bold py-4'>Total: ${updateTotal(cartItems)}</h1>
             {
                 cartItems.length === 0 ? (<h1 className='text-4xl text-center font-bold'>Your Cart is Empty</h1>) : (

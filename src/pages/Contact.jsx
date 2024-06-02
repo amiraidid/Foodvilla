@@ -9,9 +9,7 @@ function Contact() {
 
     function handleForm (event) {
         event.preventDefault()
-
-        const data = event.target.name.value;
-        console.log(data)
+        // const data = event.target.name.value;
     }
 
     return (

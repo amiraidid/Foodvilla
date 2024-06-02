@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../firebase/config'
 import { UserContext } from '../context/UserContext'
-// import { toast } from 'react-toastify'
+import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
@@ -11,17 +11,19 @@ function Login() {
     const { setCurrentUser } = useContext(UserContext)
     const navigate = useNavigate()
 
-    const handleLogin = (e) => {
-
+    const handleLogin = async (e) => {
         e.preventDefault();
-        signInWithEmailAndPassword(auth, inputs.email, inputs.password).then((res)=> {
+        try {
+            const res = await signInWithEmailAndPassword(auth, inputs.email, inputs.password);
             const userToken = res.user.accessToken;
-            localStorage.setItem('token', userToken)
-            setCurrentUser(true)
-            alert("welcome")
-            navigate('/')
-        }).catch((e) => alert("unable to login", + e.message))
-    }
+            localStorage.setItem('token', JSON.stringify(userToken));
+            setCurrentUser(true);
+            toast.success("Welcome!");
+            navigate('/');
+        } catch (error) {
+            toast.error("Unable to login: " + error.message);
+        }
+    };
 
     return (
         <section className='body h-screen mt-32'>
