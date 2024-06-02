@@ -16,7 +16,7 @@ function Login() {
         try {
             const res = await signInWithEmailAndPassword(auth, inputs.email, inputs.password);
             const userToken = res.user.accessToken;
-            localStorage.setItem('token', JSON.stringify(userToken));
+            localStorage.setItem('token', userToken);
             setCurrentUser(true);
             toast.success("Welcome!");
             navigate('/');
