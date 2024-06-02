@@ -7,6 +7,7 @@ import { UserContext } from '../context/UserContext';
 
 function Header() {
     const [displayMenu, setDisplayMenu] = useState(true)
+    
     const handleScroll = (e, id) => {
         e.preventDefault();
         const section = document.getElementById(id);
@@ -21,6 +22,7 @@ function Header() {
         signOut(auth)
         localStorage.removeItem("token")
         setCurrentUser(false)
+        window.location.reload()
     }
 
     return (
@@ -41,11 +43,11 @@ function Header() {
                 <Link to='cart'><button className='px-2 py-1 rounded text-xl bg-red-400 text-white'><i className="bi bi-cart4"></i></button></Link>
                 {
                     currentUser ? (
-                        <button onClick={handleSignOut} className='flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>SignOut</button>
+                        <button onClick={handleSignOut} className='max-sm:hidden flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>SignOut</button>
                     ) : (
                         <>
-                            <Link to='Register'><button className='flex item-center gap-2 bg-blue-400 px-4 py-2 text-white font-bold rounded-md'>Register</button></Link>
-                            <Link to='login'><button className='flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>Login</button></Link>
+                            <Link to='Register'><button className='max-sm:hidden flex item-center gap-2 bg-blue-400 px-4 py-2 text-white font-bold rounded-md'>Register</button></Link>
+                            <Link to='login'><button className='max-sm:hidden flex item-center gap-2 border-2  px-4 py-2 text-gray-700 font-bold rounded-md'>Login</button></Link>
                         </>
 
                     )

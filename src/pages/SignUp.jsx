@@ -2,16 +2,18 @@ import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../firebase/config'
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
 
     const [inputs, setInputs] = useState({})
-
+    const navigate = useNavigate()
     const handleRegister = (e) => {
         e.preventDefault();
 
         createUserWithEmailAndPassword(auth, inputs.email, inputs.password).then((res) => {
             toast.success('You have created an account😍')
+            navigate('/login')
         }).catch(e => toast.error("Could not Create An account"))
     }
     return (

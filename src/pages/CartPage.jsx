@@ -9,6 +9,7 @@ function CartPage() {
 
     const { cartItems, removeFromCart , updateTotal} = useContext(MyContext)
     
+    
     return (
         <section className='body h-screen mt-20'>
             <h1 className='text-4xl font-bold py-4'>Total: ${updateTotal(cartItems)}</h1>
